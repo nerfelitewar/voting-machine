@@ -1,3 +1,5 @@
 .README.md
 /temp
 *test
+## ! will not ignore files :D
+plan.txt
