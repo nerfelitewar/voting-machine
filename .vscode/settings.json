@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "creditnetils"
+    ],
+    "cSpell.enableFiletypes": [
+        "!python"
     ]
 }
