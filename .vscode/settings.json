@@ -1,0 +1,6 @@
+{
+    "cSpell.enableFiletypes": [
+        "!python"
+    ],
+    "python.analysis.typeCheckingMode": "off"
+}

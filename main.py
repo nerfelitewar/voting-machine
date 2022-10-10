@@ -56,7 +56,7 @@ while F_ask_main=='Yes':
             6.Skip Vote [Null]
         """+Fore.RESET))
         #~DONT DELETE THIS 
-        vote_ask=pg.confirm('Confirm this?',title='Check vote')
+        #vote_ask=pg.confirm('Confirm this?',title='Check vote')
 
         if vote_ask==1:
             BJP+=1
