@@ -3,9 +3,10 @@
 ## DUE DATE! 14-10-22, today 11/10/22
 import csv
 from colorama import Fore
-import time
+from time import sleep
 import pyautogui as pg 
-import sys 
+import sys
+from read_data import read_data 
 
 
 filename=(r"C:\MY CODING WORKSPACE\School_Project\Data\votes.csv")
@@ -13,10 +14,11 @@ fields=["NAME","AGE","ID","REGION","VOTED TO"]
 with open(filename,'w') as csvfile:
     csvwriter = csv.writer(csvfile) 
     csvwriter.writerow(fields)
-    #works fine
+
 F_ask_main=pg.confirm('Start',title="STARTING...",buttons=["Yes","No"])
 voted_to=""
 
+sleep(1)
 
 '''''NO CHANGE HERE'''
 
@@ -36,8 +38,7 @@ while F_ask_main=='Yes':
 
     """+Fore.RESET))
     if Ask_main == 3:
-        exit()
-
+        sys.exit()
     if Ask_main==1:
         BJP=0
         NCP=0
@@ -45,7 +46,6 @@ while F_ask_main=='Yes':
         CPI=0
         CPI_M=0
         SKIP_VOTERS=0
-        Total_voters=BJP+NCP+AITC+CPI+CPI_M+SKIP_VOTERS
         #####################################
         vote_ask=int(input(Fore.GREEN+"""
             1.BJP 
@@ -55,8 +55,6 @@ while F_ask_main=='Yes':
             5.CPI-M
             6.Skip Vote [Null]
         """+Fore.RESET))
-        #~DONT DELETE THIS 
-        #vote_ask=pg.confirm('Confirm this?',title='Check vote')
 
         if vote_ask==1:
             BJP+=1
@@ -76,13 +74,8 @@ while F_ask_main=='Yes':
         if vote_ask==6:
             SKIP_VOTERS+=1
             voted_to=voted_to.join('SKIPPED')
-            
-
-
-
-
-
-        
+        if Ask_main==2:
+            read_data() 
         rows=[user,age,id_no,region,voted_to] 
         with open(filename,'a') as csvfile:
             csvwriter = csv.writer(csvfile) 
