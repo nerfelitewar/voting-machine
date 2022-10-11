@@ -76,8 +76,9 @@ while F_ask_main=='Yes':
         if vote_ask==6:
             SKIP_VOTERS+=1
             voted_to=voted_to.join('SKIPPED')
-        
-        
+            
+
+
 
 
 
@@ -88,7 +89,7 @@ while F_ask_main=='Yes':
             csvwriter.writerow(rows)
 
 
-    F_ask_main=pg.confirm('Want to do again?',title='Again',buttons=['Yes','No'])
+    F_ask_main=pg.confirm('New User?',title='NEW PERSON',buttons=['Yes','No'])
     if F_ask_main=='No':
         print(Fore.BLUE+"Good Bye! Have a nice day👋"+Fore.RESET)
         exit()

@@ -2,5 +2,6 @@
     "cSpell.enableFiletypes": [
         "!python"
     ],
-    "python.analysis.typeCheckingMode": "off"
+    "python.analysis.typeCheckingMode": "off",
+    "discord.enabled": true
 }
