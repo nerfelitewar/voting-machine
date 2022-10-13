@@ -2,7 +2,7 @@ from colorama import Fore
 
 
 def read_data():
-    filename=(r"C:\MY CODING WORKSPACE\School_Project\Data\votes.csv")
+    filename=(r"Data\voters_data.csv")
     with open(filename) as csvfile:
             csvfile.seek(0)
             count=0
@@ -12,7 +12,10 @@ def read_data():
 
                 count=count+1
                 print(Fore.YELLOW+x+Fore.RESET)
-            print(Fore.LIGHTBLUE_EX+"Total voters-"+Fore.RESET,count//2)
+            print(Fore.LIGHTBLUE_EX+"Total voters-"+Fore.RESET,(count//2)-1)
+
+
+
 read_data()
 
   

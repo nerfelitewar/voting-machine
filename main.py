@@ -6,7 +6,6 @@ from colorama import Fore
 from time import sleep
 import pyautogui as pg 
 import sys
-from read_data import read_data 
 
 
 filename=(r"C:\MY CODING WORKSPACE\School_Project\Data\votes.csv")
@@ -31,14 +30,13 @@ while F_ask_main=='Yes':
 
     pg.alert("Press OK to continue",title="CONTINUE") 
     Ask_main=int(input(Fore.RED+"""
-    1. Start voting\n
-    2. Show result \n 
-    3. Exit
+    1. Start the process\n
+    2. Exit
     -----------------
 
     """+Fore.RESET))
-    if Ask_main == 3:
-        sys.exit()
+    if Ask_main == 2:
+        sys.exit(Fore.CYAN+"Exiting the process..."+Fore.RESET)
     if Ask_main==1:
         BJP=0
         NCP=0
@@ -58,24 +56,29 @@ while F_ask_main=='Yes':
 
         if vote_ask==1:
             BJP+=1
+            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join("BJP")
         if vote_ask==2:
             NCP+=1
+            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join("NCP")
         if vote_ask==3:
             AITC+=1
+            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join("AITC")
         if vote_ask==4:
             CPI+=1
+            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join("CPI")
         if vote_ask==5:
             CPI_M+=1
+            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join("CPI-M")
         if vote_ask==6:
             SKIP_VOTERS+=1
+            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join('SKIPPED')
-        if Ask_main==2:
-            read_data() 
+        
         rows=[user,age,id_no,region,voted_to] 
         with open(filename,'a') as csvfile:
             csvwriter = csv.writer(csvfile) 
@@ -84,7 +87,7 @@ while F_ask_main=='Yes':
 
     F_ask_main=pg.confirm('New User?',title='NEW PERSON',buttons=['Yes','No'])
     if F_ask_main=='No':
-        print(Fore.BLUE+"Good Bye! Have a nice day👋"+Fore.RESET)
+        print(Fore.MAGENTA+"Good Bye! Have a nice day👋"+Fore.RESET)
         exit()
     
     
