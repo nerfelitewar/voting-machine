@@ -1,3 +1,4 @@
+from time import sleep
 from colorama import Fore
 def final_results():
     filename=(r"Data\voters_data.csv")
@@ -10,8 +11,24 @@ def final_results():
             print(Fore.LIGHTMAGENTA_EX+"Total Communist Party of India voters"+Fore.LIGHTRED_EX+ "[CPI]-"+Fore.RESET,res.count("CPI"))
             print(Fore.LIGHTMAGENTA_EX+"Total Communist Party of India (Marxist) voters"+Fore.LIGHTRED_EX+ "[CPI-M]-"+Fore.RESET,res.count("C.P.I-M"))
             print(Fore.LIGHTMAGENTA_EX+"Total Skip voters"+Fore.LIGHTRED_EX+ "[NULL]-"+Fore.RESET,res.count("SKIPPED"))
+            sleep(1)
+            lst=[res.count("BJP"),res.count("INC"),
+res.count("NCP"),
+res.count("AITC"),
+res.count("CPI"),
+res.count("C.P.I-M"),
+res.count("SKIPPED")]
+            high=Fore.LIGHTYELLOW_EX+"Higest vote- "+Fore.RESET+str(max(lst))
+            print(high)
+            sleep(0.5)
+            print(Fore.LIGHTYELLOW_EX+"Lowest vote-"+Fore.RESET+str(min(lst)))
+            sleep(1)
+            if high==high:
+                print(Fore.LIGHTCYAN_EX+"⚠️ Vote clashed please re-evalute manually or reconduct vote ⚠️ "+Fore.RESET)
             
 
 
-final_results()
+
+if __name__=="__main__":
+    final_results()
 

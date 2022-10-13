@@ -2,4 +2,4 @@
 /test
 ## ! will not ignore files :D
 plan.txt
-/.vscode
+.vscode

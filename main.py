@@ -1,6 +1,3 @@
-# VOTING MACHINE
-
-## DUE DATE! 14-10-22, today 11/10/22
 import csv
 from colorama import Fore
 from time import sleep
