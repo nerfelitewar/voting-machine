@@ -24,7 +24,11 @@ res.count("SKIPPED")]
             print(Fore.LIGHTYELLOW_EX+"Lowest vote-"+Fore.RESET+str(min(lst)))
             sleep(1)
             if high==high:
-                print(Fore.LIGHTCYAN_EX+"⚠️ Vote clashed please re-evalute manually or reconduct vote ⚠️ "+Fore.RESET)
+                for high in lst:
+                    clash=lst.count(high)
+                    str(clash)
+
+                print(Fore.LIGHTRED_EX+str(clash)+Fore.LIGHTCYAN_EX+  " ⚠️ Vote clashed please re-evalute manually or reconduct vote ⚠️ "+Fore.RESET)
             
 
 

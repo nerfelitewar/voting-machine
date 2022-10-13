@@ -1,7 +1,0 @@
-{
-    "cSpell.enableFiletypes": [
-        "!python"
-    ],
-    "python.analysis.typeCheckingMode": "off",
-    "discord.enabled": true
-}
