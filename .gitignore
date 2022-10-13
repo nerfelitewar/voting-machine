@@ -1,6 +1,5 @@
 .README.md
-/temp
-*test
+/test
 ## ! will not ignore files :D
 plan.txt
 /.vscode

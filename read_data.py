@@ -1,5 +1,5 @@
 from colorama import Fore 
-
+from function_result import final_results
 
 def read_data():
     filename=(r"Data\voters_data.csv")
@@ -14,9 +14,10 @@ def read_data():
                 print(Fore.YELLOW+x+Fore.RESET)
             print(Fore.LIGHTBLUE_EX+"Total voters-"+Fore.RESET,(count//2)-1)
 
-
-
 read_data()
+
+final_results()
+
 
   
   

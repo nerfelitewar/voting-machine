@@ -8,7 +8,7 @@ import pyautogui as pg
 import sys
 
 
-filename=(r"C:\MY CODING WORKSPACE\School_Project\Data\votes.csv")
+filename=(r"Data\voters_data.csv")
 fields=["NAME","AGE","ID","REGION","VOTED TO"]
 with open(filename,'w') as csvfile:
     csvwriter = csv.writer(csvfile) 
@@ -46,12 +46,13 @@ while F_ask_main=='Yes':
         SKIP_VOTERS=0
         #####################################
         vote_ask=int(input(Fore.GREEN+"""
-            1.BJP 
-            2.NCP
-            3.ALL INDIA TRINAMOOL CONGRESS 
-            4.CPI 
-            5.CPI-M
-            6.Skip Vote [Null]
+            1.Bharatiya Janata Party 
+            2.Nationalist Congress Party
+            3.All India Trinamool Congress
+            4.Communist Party of India
+            5.Total Communist Party of India (Marxist)
+            6.Indian National Congress 
+            7.Skip Vote [Null]
         """+Fore.RESET))
 
         if vote_ask==1:
@@ -73,8 +74,12 @@ while F_ask_main=='Yes':
         if vote_ask==5:
             CPI_M+=1
             print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
-            voted_to=voted_to.join("CPI-M")
+            voted_to=voted_to.join("C.P.I-M")
         if vote_ask==6:
+            SKIP_VOTERS+=1
+            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
+            voted_to=voted_to.join('INC')
+        if vote_ask==7:
             SKIP_VOTERS+=1
             print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join('SKIPPED')
