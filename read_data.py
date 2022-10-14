@@ -1,6 +1,7 @@
 from colorama import Fore 
 from function_result import final_results
 from time import sleep 
+import pyautogui as pg 
 
 def read_data():
     filename=(r"Data\voters_data.csv")
@@ -18,7 +19,8 @@ def read_data():
             print(Fore.LIGHTBLUE_EX+"Total voters-"+Fore.RESET,(count//2)-1)
 
 read_data()
-print(Fore.LIGHTGREEN_EX+"---***********VOTE DETAILS************---"+Fore.RESET)
+pg.alert("PRESS OK FOR RESULTS")
+print(Fore.LIGHTGREEN_EX+"***********VOTE DETAILS************"+Fore.RESET)
 sleep(2)
 final_results()
 

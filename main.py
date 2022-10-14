@@ -35,13 +35,7 @@ while F_ask_main=='Yes':
     if Ask_main == 2:
         sys.exit(Fore.CYAN+"Exiting the process..."+Fore.RESET)
     if Ask_main==1:
-        BJP=0
-        NCP=0
-        AITC=0
-        CPI=0
-        CPI_M=0
-        SKIP_VOTERS=0
-        #####################################
+       #####################################
         vote_ask=int(input(Fore.GREEN+"""
             1.Bharatiya Janata Party 
             2.Nationalist Congress Party
@@ -53,31 +47,31 @@ while F_ask_main=='Yes':
         """+Fore.RESET))
 
         if vote_ask==1:
-            BJP+=1
+            
             print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join("BJP")
         if vote_ask==2:
-            NCP+=1
+            
             print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join("NCP")
         if vote_ask==3:
-            AITC+=1
+           
             print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join("AITC")
         if vote_ask==4:
-            CPI+=1
+            
             print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join("CPI")
         if vote_ask==5:
-            CPI_M+=1
+            
             print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join("C.P.I-M")
         if vote_ask==6:
-            SKIP_VOTERS+=1
+            
             print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join('INC')
         if vote_ask==7:
-            SKIP_VOTERS+=1
+            
             print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
             voted_to=voted_to.join('SKIPPED')
         
