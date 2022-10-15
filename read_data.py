@@ -19,7 +19,7 @@ def read_data():
             print(Fore.LIGHTBLUE_EX+"Total voters-"+Fore.RESET,(count//2)-1)
 
 read_data()
-pg.alert("PRESS OK FOR RESULTS")
+pg.alert("PRESS OK FOR RESULTS",title="READ DATA")
 print(Fore.LIGHTGREEN_EX+"***********VOTE DETAILS************"+Fore.RESET)
 sleep(2)
 final_results()

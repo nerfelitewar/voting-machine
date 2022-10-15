@@ -22,7 +22,7 @@ while F_ask_main=='Yes':
     user=pg.prompt("Who are you?",title='IDENTIFICATION')
     age=pg.prompt("Enter your age.",title='YOUR AGE',default=18)
     id_no=pg.prompt("Enter your Identification number",title="UID")
-    region=pg.prompt("Where are you from?",title="Location")
+    region=pg.prompt("Where are you from?",title="LOCATION")
     voted_to=''
 
     pg.alert("Press OK to continue",title="CONTINUE") 
