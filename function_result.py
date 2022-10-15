@@ -35,9 +35,44 @@ res.count("SKIPPED")]
             if clash!=1:
                 str(clash)
                 print(Fore.LIGHTRED_EX+str(clash)+Fore.LIGHTCYAN_EX+  " ⚠️ Vote clashed please re-evalute manually or reconduct vote ⚠️ "+Fore.RESET)
-            
-            
+            if  res.count("BJP")==max(lst):
+                print(Fore.LIGHTBLUE_EX+"Winner is BJP party"+Fore.RESET)
+            if  res.count("INC")==max(lst):
+                print(Fore.LIGHTBLUE_EX+"Winner is INC party"+Fore.RESET)
+            if  res.count("NCP")==max(lst):
+                print(Fore.LIGHTBLUE_EX+"Winner is NCP party"+Fore.RESET)
+            if  res.count("AITC")==max(lst):
+                print(Fore.LIGHTBLUE_EX+"Winner is AITC party"+Fore.RESET)
+            if  res.count("CPI")==max(lst):
+                print(Fore.LIGHTBLUE_EX+"Winner is CPI party"+Fore.RESET)
+            if  res.count("C.P.I-M")==max(lst):
+                print(Fore.LIGHTBLUE_EX+"Winner is CPI-M party"+Fore.RESET)
+            if  res.count("SKIPPED")==max(lst):
+                print(Fore.LIGHTBLUE_EX+"Many people choose to SKIP vote"+Fore.RESET)
+            sort_lst=sorted(lst,reverse=True)
+            if res.count("SKIPPED")==max(lst):
+                if res.count("BJP")==sort_lst[1]:
+                    print(Fore.LIGHTGREEN_EX+"Next winner to be considered should be, BJP"+Fore.RESET)
 
+            if res.count("SKIPPED")==max(lst):
+                if res.count("INC")==sort_lst[1]:
+                    print(Fore.LIGHTGREEN_EX+"Next winner to be considered should be, INC"+Fore.RESET)
+
+            if res.count("SKIPPED")==max(lst):
+                if res.count("NCP")==sort_lst[1]:
+                    print(Fore.LIGHTGREEN_EX+"Next winner to be considered should be, NCP"+Fore.RESET)
+
+            if res.count("SKIPPED")==max(lst):
+                if res.count("AITC")==sort_lst[1]:
+                    print(Fore.LIGHTGREEN_EX+"Next winner to be considered should be, AITC"+Fore.RESET)
+
+            if res.count("SKIPPED")==max(lst):
+                if res.count("CPI")==sort_lst[1]:
+                    print(Fore.LIGHTGREEN_EX+"Next winner to be considered should be, CPI"+Fore.RESET)
+
+            if res.count("SKIPPED")==max(lst):
+                if res.count("C.P.I-M")==sort_lst[1]:
+                    print(Fore.LIGHTGREEN_EX+"Next winner to be considered should be, CPI-M"+Fore.RESET)
 
 
 if __name__=="__main__":
