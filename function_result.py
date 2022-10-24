@@ -1,9 +1,23 @@
 from time import sleep
 from colorama import Fore
+import pyautogui as pg
+import sys
 def final_results():
     filename=(r"Data\voters_data.csv")
     with open(filename) as csvfile:
             res = "\n".join(csvfile.readlines())
+            lst=[res.count("BJP"),res.count("INC"),
+                res.count("NCP"),
+                res.count("AITC"),
+                res.count("CPI"),
+                res.count("C.P.I-M"),
+                res.count("SKIPPED")]
+            if max(lst)==0:
+                sys.exit(Fore.LIGHTYELLOW_EX+'Error! Cant run this file without any data.'+Fore.RESET)
+            else:
+                pass
+
+            
             print(Fore.LIGHTMAGENTA_EX+"Total Bharatiya Janata Party voters"+Fore.LIGHTRED_EX+ "[BJP]-"+Fore.RESET,res.count("BJP"))
             sleep(0.5)
             print(Fore.LIGHTMAGENTA_EX+"Total Indian National Congress voters"+Fore.LIGHTRED_EX+ "[INC]-"+Fore.RESET,res.count("INC"))
@@ -18,13 +32,6 @@ def final_results():
             sleep(0.5)
             print(Fore.LIGHTMAGENTA_EX+"Total Skip voters"+Fore.LIGHTRED_EX+ "[NULL]-"+Fore.RESET,res.count("SKIPPED"))
             sleep(1)
-            lst=[res.count("BJP"),res.count("INC"),
-res.count("NCP"),
-res.count("AITC"),
-res.count("CPI"),
-res.count("C.P.I-M"),
-res.count("SKIPPED")]
-
 
             high=Fore.LIGHTYELLOW_EX+"Higest vote- "+Fore.RESET+str(max(lst))
             print(high)
@@ -36,17 +43,25 @@ res.count("SKIPPED")]
                 str(clash)
                 print(Fore.LIGHTRED_EX+str(clash)+Fore.LIGHTCYAN_EX+  " ⚠️ Vote clashed please re-evalute manually or reconduct vote ⚠️ "+Fore.RESET)
             if  res.count("BJP")==max(lst):
-                print(Fore.LIGHTBLUE_EX+"Winner is BJP party"+Fore.RESET)
+                print(Fore.LIGHTBLUE_EX+"Winner is BJP party by {} votes".format(res.count("BJP"))+Fore.RESET)
+                pg.alert("🎉 BJP HAS WON THIS ELECTION 🎉",title='WINNER')
             if  res.count("INC")==max(lst):
-                print(Fore.LIGHTBLUE_EX+"Winner is INC party"+Fore.RESET)
+                print(Fore.LIGHTBLUE_EX+"Winner is INC party by {} votes".format(res.count('INC'))+Fore.RESET)
+                pg.alert("🎉 INC HAS WON THIS ELECTION 🎉",title='WINNER')
             if  res.count("NCP")==max(lst):
-                print(Fore.LIGHTBLUE_EX+"Winner is NCP party"+Fore.RESET)
+                print(Fore.LIGHTBLUE_EX+"Winner is NCP party by {} votes".format(res.count('NCP'))+Fore.RESET)
+                pg.alert("🎉 NCP HAS WON THIS ELECTION 🎉",title='WINNER')
             if  res.count("AITC")==max(lst):
-                print(Fore.LIGHTBLUE_EX+"Winner is AITC party"+Fore.RESET)
+                print(Fore.LIGHTBLUE_EX+"Winner is AITC party by {} votes".format(res.count('AITC'))+Fore.RESET)
+                pg.alert("🎉 AITC HAS WON THIS ELECTION 🎉",title='WINNER')
             if  res.count("CPI")==max(lst):
-                print(Fore.LIGHTBLUE_EX+"Winner is CPI party"+Fore.RESET)
+                print(Fore.LIGHTBLUE_EX+"Winner is CPI party by {} votes".format(res.count('CPI'))+Fore.RESET)
+                pg.alert("🎉 CPI HAS WON THIS ELECTION 🎉",title='WINNER')
             if  res.count("C.P.I-M")==max(lst):
-                print(Fore.LIGHTBLUE_EX+"Winner is CPI-M party"+Fore.RESET)
+                print(Fore.LIGHTBLUE_EX+"Winner is CPI-M party by {} votes".format(res.count('C.P.I-M'))+Fore.RESET)
+
+
+                #setting logic for skipped votes
             if  res.count("SKIPPED")==max(lst):
                 print(Fore.LIGHTBLUE_EX+"Many people choose to SKIP vote"+Fore.RESET)
             sort_lst=sorted(lst,reverse=True)

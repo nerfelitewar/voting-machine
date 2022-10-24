@@ -2,3 +2,6 @@
 /test
 plan.txt
 .vscode
+.__pycache__
+
+
