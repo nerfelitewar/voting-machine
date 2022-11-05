@@ -11,7 +11,7 @@ with open(filename,'w') as csvfile:
     csvwriter = csv.writer(csvfile) 
     csvwriter.writerow(fields)
 
-F_ask_main=pg.confirm('Start',title="STARTING...",buttons=["Yes","No"])
+F_ask_main=pg.confirm('START',title="STARTING...",buttons=["Yes","No"])
 voted_to=""
 
 sleep(1)
@@ -26,24 +26,23 @@ while F_ask_main=='Yes':
     voted_to=''
 
     pg.alert("Press OK to continue",title="CONTINUE") 
-    Ask_main=int(input(Fore.RED+"""
-    1. Start the process\n
-    2. Exit
-    -----------------
+    Ask_main=pg.confirm('SELECT ANY ONE OF THESE',buttons=['START','EXIT'],title='PROCEED NEXT?')
+    if Ask_main == "EXIT":
+        pg.alert("EXITING THE PROCESS...👋")
+        sys.exit(Fore.CYAN+"Exiting the process...👋"+Fore.RESET)
+    if Ask_main=="START":
 
-    """+Fore.RESET))
-    if Ask_main == 2:
-        sys.exit(Fore.CYAN+"Exiting the process..."+Fore.RESET)
-    if Ask_main==1:
        #####################################
         vote_ask=int(input(Fore.GREEN+"""
-            1.Bharatiya Janata Party 
-            2.Nationalist Congress Party
-            3.All India Trinamool Congress
-            4.Communist Party of India
-            5.Total Communist Party of India (Marxist)
-            6.Indian National Congress 
-            7.Skip Vote [Null]
+        +-----------------------------------------------+
+        |   1.Bharatiya Janata Party                    |
+        |   2.Nationalist Congress Party                |
+        |   3.All India Trinamool Congress              |
+        |   4.Communist Party of India                  |
+        |   5.Total Communist Party of India (Marxist)  |
+        |   6.Indian National Congress                  |
+        |   7.Skip Vote [Null]                          |
+        +-----------------------------------------------+
         """+Fore.RESET))
 
         if vote_ask==1:
