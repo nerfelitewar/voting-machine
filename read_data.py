@@ -9,11 +9,8 @@ def read_data():
             csvfile.seek(0)
             count=0
             for x in csvfile.readlines():
-                lst=[]
-                lst.append(x)
-
                 count=count+1
-                sleep(0.3)
+                sleep(0.2)
                 print(Fore.YELLOW+x+Fore.RESET)
             sleep(1)
             print(Fore.LIGHTBLUE_EX+"Total voters-"+Fore.RESET,(count//2)-1)
