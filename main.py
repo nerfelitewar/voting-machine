@@ -33,33 +33,37 @@ while F_ask_main=='Yes':
     if Ask_main=="START":
 
        #####################################
-        vote_ask=int(input(Fore.GREEN+"""
-        +-----------------------------------------------+
-        |   1.Bharatiya Janata Party                    |
-        |   2.Nationalist Congress Party                |
-        |   3.All India Trinamool Congress              |
-        |   4.Communist Party of India                  |
-        |   5.Total Communist Party of India (Marxist)  |
-        |   6.Indian National Congress                  |
-        |   7.Skip Vote [Null]                          |
-        +-----------------------------------------------+
-        """+Fore.RESET))
+        vote_ask=pg.confirm("""1.Bharatiya Janata Party                   
+2.Nationalist Congress Party               
+3.All India Trinamool Congress             
+4.Communist Party of India                 
+5.Total Communist Party of India (Marxist) 
+6.Indian National Congress                 
+7.Skip Vote [Null]""",title="VOTE YOUR PARTY",buttons=[1,2,3,4,5,6,7])
+
+        vote_ask=int(vote_ask)
+        parties=['1.Bharatiya Janata Party' ,                  
+'2.Nationalist Congress Party' ,             
+'3.All India Trinamool Congress' ,            
+'4.Communist Party of India'  ,              
+'5.Total Communist Party of India (Marxist)' ,
+'6.Indian National Congress' ,                
+'7.Skip Vote [Null]']
 
         if vote_ask==1:
-            
-            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
+            print(Fore.BLUE+f"{str(user)}, you have voted to {parties[vote_ask-1]}"+Fore.RESET)
             voted_to=voted_to.join("BJP")
         if vote_ask==2:
             
-            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
+            print(Fore.BLUE+f"{str(user)}, you have voted to {parties[vote_ask-1]}"+Fore.RESET)
             voted_to=voted_to.join("NCP")
         if vote_ask==3:
            
-            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
+            print(Fore.BLUE+f"{str(user)}, you have voted to {parties[vote_ask-1]}"+Fore.RESET)
             voted_to=voted_to.join("AITC")
         if vote_ask==4:
             
-            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
+            print(Fore.BLUE+f"{str(user)}, you have voted to {parties[vote_ask-1]}"+Fore.RESET)
             voted_to=voted_to.join("CPI")
         if vote_ask==5:
             
@@ -67,11 +71,11 @@ while F_ask_main=='Yes':
             voted_to=voted_to.join("C.P.I-M")
         if vote_ask==6:
             
-            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
+            print(Fore.BLUE+f"{str(user)}, you have voted to {parties[vote_ask-1]}"+Fore.RESET)
             voted_to=voted_to.join('INC')
         if vote_ask==7:
             
-            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
+            print(Fore.BLUE+f"{str(user)}, you have voted to {parties[vote_ask-1]}"+Fore.RESET)
             voted_to=voted_to.join('SKIPPED')
         
         rows=[user,age,id_no,region,voted_to] 
