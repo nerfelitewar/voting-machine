@@ -3,7 +3,7 @@ from colorama import Fore
 from time import sleep
 import pyautogui as pg 
 import sys
-
+from read_data import read_data
 
 filename=(r"Data\voters_data.csv")
 fields=["NAME","AGE","ID","REGION","VOTED TO"]
@@ -12,11 +12,13 @@ with open(filename,'w') as csvfile:
     csvwriter.writerow(fields)
 
 F_ask_main=pg.confirm('START',title="STARTING...",buttons=["Yes","No"])
+if F_ask_main=='No':
+    sys.exit(Fore.LIGHTRED_EX+'Good bye! Have a nice day ahead!!'+Fore.RESET)
+##      '''''NO CHANGE HERE'''        ##
+
 voted_to=""
 
 sleep(1)
-
-'''''NO CHANGE HERE'''
 
 while F_ask_main=='Yes':
     user=pg.prompt("Who are you?",title='IDENTIFICATION')
@@ -28,7 +30,7 @@ while F_ask_main=='Yes':
     pg.alert("Press OK to continue",title="CONTINUE") 
     Ask_main=pg.confirm('SELECT ANY ONE OF THESE',buttons=['START','EXIT'],title='PROCEED NEXT?')
     if Ask_main == "EXIT":
-        pg.alert("EXITING THE PROCESS...👋")
+        pg.alert("PROCESS STOPPED...👋")
         sys.exit(Fore.CYAN+"Exiting the process...👋"+Fore.RESET)
     if Ask_main=="START":
 
@@ -67,7 +69,7 @@ while F_ask_main=='Yes':
             voted_to=voted_to.join("CPI")
         if vote_ask==5:
             
-            print(Fore.BLUE+f"{str(user)}, you have voted to".format(user)+Fore.RESET,vote_ask)
+            print(Fore.BLUE+f"{str(user)}, you have voted to {parties[vote_ask-1]}"+Fore.RESET)
             voted_to=voted_to.join("C.P.I-M")
         if vote_ask==6:
             
@@ -86,8 +88,17 @@ while F_ask_main=='Yes':
 
     F_ask_main=pg.confirm('New User?',title='NEW PERSON',buttons=['Yes','No'])
     if F_ask_main=='No':
-        print(Fore.MAGENTA+"Good Bye! Have a nice day👋"+Fore.RESET)
-        exit()
+        pass
+        
+
+res=pg.confirm('SHOW VOTE RESULTS',title='VOTE RESULTS',buttons=['YES','NO','MAYBE'])
+if res=='YES':
+    read_data()
+if res=='NO':
+    sys.exit(Fore.MAGENTA+"Good Bye! Have a nice day!!👋"+Fore.RESET)
+if res=='MAYBE':
+    pg.alert('To see vote results go to "read_data.py" file!',title='WANNA SEE RESULTS?')
+exit()
     
 ### https://www.github.com/nerfelitewar
 

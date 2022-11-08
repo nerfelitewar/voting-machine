@@ -13,13 +13,21 @@ def read_data():
                 sleep(0.2)
                 print(Fore.YELLOW+x+Fore.RESET)
             sleep(1)
-            print(Fore.LIGHTBLUE_EX+"Total voters-"+Fore.RESET,(count//2)-1)
+            total_voters=(count//2)-1
+            if total_voters==-1 or total_voters==0:
+                pg.alert('NO VOTER(S) DATA AVAILABLE ⚠️',title='TOTAL VOTERS')
+                exit()
+            else:
+                print(Fore.LIGHTBLUE_EX+"Total voters-"+Fore.RESET,total_voters)
+            pg.alert("PRESS OK FOR RESULTS",title="READ DATA")
+            print(Fore.LIGHTGREEN_EX+"***********VOTE DETAILS************"+Fore.RESET)
+            sleep(2)
+            final_results()
 
-read_data()
-pg.alert("PRESS OK FOR RESULTS",title="READ DATA")
-print(Fore.LIGHTGREEN_EX+"***********VOTE DETAILS************"+Fore.RESET)
-sleep(2)
-final_results()
+
+
+if __name__=='__main__':
+    read_data()
 
 
   
