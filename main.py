@@ -30,6 +30,12 @@ while F_ask_main=='Yes':
     pg.alert("Press OK to continue",title="CONTINUE") 
     Ask_main=pg.confirm('SELECT ANY ONE OF THESE',buttons=['START','EXIT'],title='PROCEED NEXT?')
     if Ask_main == "EXIT":
+        null_file=open(filename,'w')
+        null_file.seek(0)
+        null=''
+        null_file.write(null)
+        null_file.close()
+        
         pg.alert("PROCESS STOPPED...👋")
         sys.exit(Fore.CYAN+"Exiting the process...👋"+Fore.RESET)
     if Ask_main=="START":
