@@ -36,7 +36,7 @@ def final_results():
             high=Fore.LIGHTYELLOW_EX+"Higest vote- "+Fore.RESET+str(max(lst))
             print(high)
 
-            print(Fore.LIGHTYELLOW_EX+"Lowest vote- "+Fore.RESET+str(min(lst)))
+            print(Fore.LIGHTYELLOW_EX+"Lowest vote- "+Fore.RESET+str(min(lst))+"\n")
             sleep(1)
             clash=lst.count(max(lst))
             if clash!=1:
@@ -44,26 +44,27 @@ def final_results():
                 print(Fore.LIGHTRED_EX+str(clash)+Fore.LIGHTCYAN_EX+  " ⚠️ Vote clashed please re-evalute manually or reconduct vote ⚠️ "+Fore.RESET)
             if  res.count("BJP")==max(lst):
                 print(Fore.LIGHTBLUE_EX+"Winner is BJP party by {} votes".format(res.count("BJP"))+Fore.RESET)
-                pg.alert("🎉 BJP HAS WON THIS ELECTION 🎉",title='WINNER')
+                pg.alert("🎉 BJP HAS WON THIS ELECTION BY {} VOTES 🎉".format(res.count("BJP")),title='WINNER')
             if  res.count("INC")==max(lst):
                 print(Fore.LIGHTBLUE_EX+"Winner is INC party by {} votes".format(res.count('INC'))+Fore.RESET)
-                pg.alert("🎉 INC HAS WON THIS ELECTION 🎉",title='WINNER')
+                pg.alert("🎉 INC HAS WON THIS ELECTION BY {} VOTES 🎉".format(res.count("INC")),title='WINNER')
             if  res.count("NCP")==max(lst):
                 print(Fore.LIGHTBLUE_EX+"Winner is NCP party by {} votes".format(res.count('NCP'))+Fore.RESET)
-                pg.alert("🎉 NCP HAS WON THIS ELECTION 🎉",title='WINNER')
+                pg.alert("🎉 NCP HAS WON THIS ELECTION BY {} VOTES 🎉".format(res.count("NCP")),title='WINNER')
             if  res.count("AITC")==max(lst):
                 print(Fore.LIGHTBLUE_EX+"Winner is AITC party by {} votes".format(res.count('AITC'))+Fore.RESET)
-                pg.alert("🎉 AITC HAS WON THIS ELECTION 🎉",title='WINNER')
+                pg.alert("🎉 AITC HAS WON THIS ELECTION BY {} VOTES 🎉".format(res.count("AITC")),title='WINNER')
             if  res.count("CPI")==max(lst):
                 print(Fore.LIGHTBLUE_EX+"Winner is CPI party by {} votes".format(res.count('CPI'))+Fore.RESET)
-                pg.alert("🎉 CPI HAS WON THIS ELECTION 🎉",title='WINNER')
+                pg.alert("🎉 CPI HAS WON THIS ELECTION BY {} VOTES 🎉".format(res.count("CPI")),title='WINNER')
             if  res.count("C.P.I-M")==max(lst):
                 print(Fore.LIGHTBLUE_EX+"Winner is CPI-M party by {} votes".format(res.count('C.P.I-M'))+Fore.RESET)
-
+                pg.alert("🎉 CPI-M HAS WON THIS ELECTION BY {} VOTES 🎉".format(res.count("C.P.I-M")),title='WINNER')
 
                 #setting logic for skipped votes
             if  res.count("SKIPPED")==max(lst):
-                print(Fore.LIGHTBLUE_EX+"Many people choose to SKIP vote"+Fore.RESET)
+                print(Fore.LIGHTBLUE_EX+"Many people choose to SKIP vote."+Fore.RESET)
+                pg.alert("Many people choose to SKIP vote go to your terminal and evaluate result.",title="MANY PEOPLE SKIPPED VOTE")
             sort_lst=sorted(lst,reverse=True)
             if res.count("SKIPPED")==max(lst):
                 if res.count("BJP")==sort_lst[1]:

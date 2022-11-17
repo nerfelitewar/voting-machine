@@ -30,14 +30,21 @@ while F_ask_main=='Yes':
     pg.alert("Press OK to continue",title="CONTINUE") 
     Ask_main=pg.confirm('SELECT ANY ONE OF THESE',buttons=['START','EXIT'],title='PROCEED NEXT?')
     if Ask_main == "EXIT":
-        null_file=open(filename,'w')
-        null_file.seek(0)
-        null=''
-        null_file.write(null)
-        null_file.close()
+        del_data=pg.confirm("THIS WILL DELETE ALL RECORDS",title="WARNING ⚠️",buttons=["PROCEED","STOP"]) #deleted rec and my data will not be included
+        if del_data=="STOP":
+            null_file=open(filename,'a+')
+            null_file.seek(0,2)
+            null_file.close()
+            
+        elif del_data=="PROCEED":
+            null_file=open(filename,'w')
+            null_file.seek(0)
+            null=''
+            null_file.write(null)
+            null_file.close()
         
-        pg.alert("PROCESS STOPPED...👋")
-        sys.exit(Fore.CYAN+"Exiting the process...👋"+Fore.RESET)
+            pg.alert("PROCESS STOPPED...👋")
+            sys.exit(Fore.CYAN+"Exiting the process...👋"+Fore.RESET)
     if Ask_main=="START":
 
        #####################################
@@ -92,7 +99,7 @@ while F_ask_main=='Yes':
             csvwriter.writerow(rows)
 
 
-    F_ask_main=pg.confirm('New User?',title='NEW PERSON',buttons=['Yes','No'])
+    F_ask_main=pg.confirm('NEW USER?',title='NEW PERSON',buttons=['Yes','No'])
     if F_ask_main=='No':
         pass
         
