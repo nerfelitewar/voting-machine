@@ -3,5 +3,6 @@
 plan.txt
 .vscode
 /__pycache__
+/DATABASE_SQL
 
 
