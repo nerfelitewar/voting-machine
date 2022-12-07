@@ -6,7 +6,7 @@ mycur=mydb.cursor()
 
 
 mycur.execute(("""CREATE DATABASE IF NOT EXISTS vote"""))
-
+mycur.execute(("USE vote"))
 mycur.execute(("""CREATE TABLE IF NOT EXISTS voter_data(name varchar(20) NOT NULL,age INT(3) NOT NULL,uid INT(30) PRIMARY KEY NOT NULL,region varchar(20) NOT NULL,voted_to varchar(20) NOT NULL)"""))
 
 
@@ -31,8 +31,8 @@ with open(r"Data\voters_data.csv") as vd:
                         mycur.execute(("insert into voter_data(name,age,uid,region,voted_to) values('{}',{},{},'{}','{}')".format(sql_data[0],sql_data[1],sql_data[2],sql_data[3],sql_data[4])))
             
                     except:
-                        print('NO DATA PLEASE RECHECK!')
+                        None
 
-                    finally:
-                        print("DATA EXPORTED TO MYSQL DATABASE!")
-                        break 
+                    
+                    print("DATA EXPORTED SUCCESSFULLY TO MYSQL DATABASE!")
+                    break 
