@@ -1,14 +1,25 @@
-# VOTING MACHINE 
+# VOTING MACHINE 🧑‍💻📊
 
 <h4> -SCHOOL PROJECT </h4>
 
+# MODULES NEEDED ⚙-
 
-### Language Used
+```sh
+pip install PyAutoGUI
+pip install colorama
+pip install python-csv
+```
+
+
+### Language Used 🐍
 <h6>Python 3.9</h6>
 <div align="left">
       <h1> <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" width="80px"><br/></h1>
-<div align="center">
-      <b><ins>Modules to be installed <ins></b><br>
+      
+
+
+<div align="left">
+      <b><ins>Modules Docs 📜<ins></b><br>
       <var><a href="https://pypi.org/project/PyAutoGUI/">pip install PyAutoGUI</a></var> <br>
       <var><a href="https://pypi.org/project/colorama/">pip install colorama</a></var> <br>
       <var><a href="https://pypi.org/project/python-csv/">pip install python-csv</a></var>
