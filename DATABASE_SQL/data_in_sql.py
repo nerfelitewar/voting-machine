@@ -18,21 +18,20 @@ with open(r"Data\voters_data.csv") as vd:
         data=[] #main data in str
         for i in range(1,len(r_data),2): #neglect gaps in data 
             data.append(r_data[i])
-            for j in data:
-                m_data=j  #main data ie string
-                sql_data=j.strip().split(',') #removed spaces and \n
-                
-
-                print(sql_data)
-
-
-                while data:
-                    try:
-                        mycur.execute(("insert into voter_data(name,age,uid,region,voted_to) values('{}',{},{},'{}','{}')".format(sql_data[0],sql_data[1],sql_data[2],sql_data[3],sql_data[4])))
+        for j in data:
+            m_data=j  #main data ie string
+            sql_data=j.strip().split(',') #removed spaces and \n
             
-                    except:
-                        None
 
-                    
-                    print("DATA EXPORTED SUCCESSFULLY TO MYSQL DATABASE!")
-                    break 
+            print(sql_data)
+            print("DATA UPLOADED TO SQL DATABASE SUCCESSFULLY!")
+
+            while data:
+                try:
+                    mycur.execute(("insert into voter_data(name,age,uid,region,voted_to) values('{}',{},{},'{}','{}')".format(sql_data[0],sql_data[1],sql_data[2],sql_data[3],sql_data[4])))
+        
+                except:
+                    None
+                    break
+            
+                 
