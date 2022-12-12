@@ -24,8 +24,26 @@ while F_ask_main=='Yes':
     user=pg.prompt("Who are you?",title='IDENTIFICATION')
     age=pg.prompt("Enter your age.",title='YOUR AGE',default=18)
     id_no=pg.prompt("Enter your Identification number",title="UID")
+    
+
+    uid_file=open(filename)
+    uid_data=uid_file.read()
+    if id_no in set(uid_data): #uniqueness of UID 
+        pg.alert("YOU CANT RE-VOTE PLEASE RE-TRY",title="SYSTEM CRASH DUE TO UID CLASH")
+        uid_file=open(filename,'a+')
+        uid_file.seek(0,2)
+        uid_file.write("")
+        uid_file.close()
+        break 
+        
+    else:
+        pass 
+
+
+
     region=pg.prompt("Where are you from?",title="LOCATION")
-    voted_to=''
+
+    voted_to='' #voted to for csv file 
 
     pg.alert("Press OK to continue",title="CONTINUE") 
     Ask_main=pg.confirm('SELECT ANY ONE OF THESE',buttons=['START','EXIT'],title='PROCEED NEXT?')
