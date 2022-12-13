@@ -5,6 +5,10 @@
 # MODULES NEEDED ⚙-
 
 ```sh
+python -m pip install --upgrade pip
+```
+
+```sh
 pip install PyAutoGUI
 pip install colorama
 pip install python-csv
