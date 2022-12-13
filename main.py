@@ -5,6 +5,11 @@ import pyautogui as pg
 import sys
 from read_data import read_data
 
+pg.alert("""1.DO NOT TRY TO RE-VOTE WITH THE SAME DATA.\n
+2.CITIZEN SHOULD BE 18 OR ABOVE 18 YEARS.\n
+3.YOUR UID SHOULD BE UNIQUE.\n
+""",title="⚠️NOTE⚠️")
+
 filename=(r"Data\voters_data.csv")
 fields=["NAME","AGE","ID","REGION","VOTED TO"]
 with open(filename,'w') as csvfile:
