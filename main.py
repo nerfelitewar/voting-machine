@@ -34,7 +34,7 @@ while F_ask_main=='Yes':
     uid_file=open(filename)
     uid_data=uid_file.read()
     if id_no in set(uid_data): #uniqueness of UID 
-        pg.alert("YOU CANT RE-VOTE PLEASE RE-TRY",title="SYSTEM CRASH DUE TO UID CLASH")
+        pg.alert("SYSTEM CRASHED ⚠️",title="SYSTEM CRASH DUE TO UID CLASH")
         uid_file=open(filename,'a+')
         uid_file.seek(0,2)
         uid_file.write("")
