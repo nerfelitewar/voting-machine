@@ -13,7 +13,11 @@ pip install PyAutoGUI
 pip install colorama
 pip install python-csv
 ```
-
+<var><b><u>OR</u></b></var>
+```sh 
+pip install -r requirements.txt 
+```
+^^^^^^^^^^^WILL DOWNLOAD ALL NESSESSARY MODULES 
 
 ### Language Used 🐍
 <h6>Python 3.9</h6>
