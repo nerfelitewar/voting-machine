@@ -1,3 +1,3 @@
-pip install PyAutoGUI
-pip install colorama
-pip install python-csv
+PyAutoGUI
+colorama
+python-csv
