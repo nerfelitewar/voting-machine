@@ -1,6 +1,6 @@
 import mysql.connector as mc 
 from dbconfig import Config
-mydb=mc.connect(host=Config.host,user=Config.user,passwd=Config.passwd,database=Config.database)
+mydb=mc.connect(host=Config.host,user=Config.user,passwd=Config.passwd)
 mydb.autocommit=True
 mycur=mydb.cursor()
 
